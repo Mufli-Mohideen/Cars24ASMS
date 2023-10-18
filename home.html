@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Service Website</title>
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Add Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Add a custom font from Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap">
+    <link rel="stylesheet" href="homestyle.css">
+
+    <style>
+        #logout-icon {
+            position: absolute;
+            top: 10px; /* Adjust the top distance as needed */
+            right: 10px; /* Adjust the right distance as needed */
+        }
+        
+    </style>
+
+
+</head>
+
+<body>
+    <!-- Header with Welcome Message -->
+    <div class="header animate__animated animate__fadeIn">
+        <h1 class="gold title" data-text="Cars24 AutoService Center">Welcome to Cars24</h1>
+        <div id="logout-icon" class="top-right">
+            <button id="logout-button" style="background-color: rgb(255, 191, 0); color: black; border-radius: 5px; border: none;" onmouseover="this.style.backgroundColor='black'; this.style.color='rgb(255, 191, 0)'" onmouseout="this.style.backgroundColor='rgb(255, 191, 0)'; this.style.color='black'" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+    </div>
+    
+
+    <div class="split-container">
+        <!-- First Section: Register Your Car -->
+        <div class="split animate__animated animate__fadeIn" style="background-color: #111;">
+            <div class="black-box">
+                <h2>Register Your Car</h2>
+                <p class="description gold">Give your car the care it deserves.</p>
+                <i class="fas fa-car icon gold"></i>
+                <a href="registercar.html" class="btn btn-gold">Register Now</a>
+            </div>
+        </div>
+
+        <div class="split animate__animated animate__fadeIn" style="background-color: #222;">
+            <div class="black-box">
+                <h2>Generate QR Code</h2>
+                <p class="description gold">View all your service records using this QR code.</p>
+                <i class="fas fa-qrcode icon gold"></i>
+                <a href="qr.php" class="btn btn-gold">Generate QR Code</a>
+            </div>
+        </div>
+
+        <!-- Third Section: Book an Appointment -->
+        <div class="split animate__animated animate__fadeIn" style="background-color: #333;">
+            <div class="black-box">
+                <h2>Book an Appointment</h2>
+                <p class="description gold">Schedule your next car service appointment with us.</p>
+                <i class="fas fa-calendar-alt icon gold"></i>
+                <a href="appoitment.html" class="btn btn-gold">Book an Appointment</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Engaging Content -->
+    <div class="engaging-content">
+        <h2 class="gold">Why Choose Us?</h2>
+        <p>At Cars24, excellence in car service is our hallmark. Our seasoned professionals, equipped with cutting-edge technology, offer a comprehensive range of automotive solutions. We prioritize your car's longevity and safety, ensuring it receives the utmost care. Trust us to deliver quality service that your cherished vehicle deserves.</p>
+    </div>
+
+    <!-- Additional Content -->
+    <div class="additional-content animate__animated animate__fadeIn">
+        <h2 class="gold"><span class="glowing-text">Special Offer</span></h2>
+        <p>Get 20% off on your first service appointment. Our limited-time offer ensures significant savings on your initial car service with us. Book now to experience the Cars24 difference and enjoy expert care for your vehicle at an unbeatable price.</p>
+    </div>
+
+    <div class="all-rights">
+        <p class="gold"><i class="fas fa-copyright"></i> All Rights Reserved - Cars24 Auto Service Center</p>
+    </div>
+
+
+    <!-- JavaScript and Bootstrap scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Add Font Awesome JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script>
+        function logout() {
+    // Clear the session
+    // You can clear specific session variables if needed
+    // by using `unset` or simply clear the entire session
+    sessionStorage.clear();
+    
+    // Redirect to index.html
+    window.location.href = "index.html";
+    }
+
+    </script>
+
+</body>
+</html>

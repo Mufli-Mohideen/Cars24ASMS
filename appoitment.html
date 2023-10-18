@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Service Appointment</title>
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url(images/bg.jpg) no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            opacity: 0;
+            width: 100%;
+            max-width: 375px;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 2px solid gold;
+            border-radius: 10px;
+            animation: fadeIn 1s ease-in forwards, glow 2s infinite alternate; /* Add glow animation */
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                border-color: gold;
+                box-shadow: 0 0 10px gold;
+            }
+            100% {
+                border-color: transparent;
+                box-shadow: none;
+            }
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        select, input[type="date"], input[type="time"] {
+            width: calc(100% - 25px); /* Reduce width by 25px */
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            background-color: #444;
+            color: white;
+            transition: border-color 0.3s, background-color 0.3s;
+        }
+
+        select:hover, input[type="date"]:hover, input[type="time"]:hover {
+            border-color: gold;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: gold;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            margin: 0 10px;
+        }
+
+        button:hover {
+            background-color: black;
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Car Service Appointment</h1>
+        <form id="appointmentForm" method="post" action="appointment.php">
+            <label for="service">Service:</label>
+            <select id="service" name="service">
+                <option value="Gear oil change">Gear oil change</option>
+                <option value="Engine oil change">Engine oil change</option>
+                <option value="Bodywash">Bodywash</option>
+                <option value="Wax">Wax</option>
+                <option value="Interior Clean">Interior Clean</option>
+            </select>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required>
+
+            <div class="button-container">
+                <button type="button" id="clearButton">Clear</button>
+                <button type="submit" id="submitButton">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

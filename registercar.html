@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Information Form</title>
+    <link rel="stylesheet" href="registercarstyle.css">
+    <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+    <form action="registercar.php" method="post" enctype="multipart/form-data">
+    <div class="container">
+        <h1>Car Information Form</h1>
+        <label for="registration">Car Registration Number</label>
+        <input type="text" id="registration" placeholder="Ex: ABC-1234" required name="carRegistration">
+
+        <label for="manufacturer">Manufacturer</label>
+        <select id="manufacturer" required name="manufacturer">
+            <option value="Toyota">Toyota</option>
+            <option value="Suzuki">Suzuki</option>
+            <option value="Honda">Honda</option>
+            <option value="Mazda">Mazda</option>
+            <option value="Range Rover">Range Rover</option>
+        </select>
+
+        <label for="model">Model</label>
+        <input type="text" id="model" required name="model">
+
+        <label for="year">Manufactured Year</label>
+        <input type="text" id="year" required name="year">
+
+        <label for="mileage">Current Mileage</label>
+        <input type="text" id="mileage" required name="mileage">
+
+
+        <label>Fuel Type</label>
+        <div class="fuel-container">
+            <input type="radio" id="petrol" name="fuel" value="Petrol" required name="fuel">
+            <label for="petrol">Petrol</label>
+            <input type="radio" id="diesel" name="fuel" value="Diesel" required name="fuel">
+            <label for="diesel">Diesel</label>
+        </div>
+        <label for="carImage">Car Image</label>
+        <div class="file-input-container">
+            <input type="file" class="file-input" id="carImage" name="carImg">
+            <button class="file-button">Choose File</button>
+        </div>
+        <div class="btn-container">
+            <button id="clearBtn" type="button">Clear</button>
+            <button id="submitBtn" type="submit">Submit</button>
+        </div>
+    </div>
+</form>
+
+    <script>
+            const clearBtn = document.getElementById("clearBtn");
+            clearBtn.addEventListener("click", function () {
+                document.getElementById("registration").value = "";
+                document.getElementById("manufacturer").value = "Toyota";
+                document.getElementById("model").value = "";
+                document.getElementById("year").value = "";
+                document.getElementById("mileage").value = "";
+                document.getElementById("petrol").checked = true;
+                document.getElementById("carImage").value = "";
+            });
+        
+    </script>
+</body>
+</html>

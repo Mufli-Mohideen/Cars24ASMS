@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(images/bg.jpg); /* Replace 'your-image.jpg' with your image file path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+.container {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 50px auto;
+    max-width: 375px;
+}
+.container label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.container input[type="text"],
+.container select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    background-color: #444;
+    color: #fff;
+    border-radius: 5px;
+}
+.container input[type="radio"] {
+    margin-top: 5px;
+}
+.container .btn-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.container button:hover {
+    background-color: #777;
+}
+.container img {
+    max-width: 100%;
+    margin-top: 10px;
+}
+
+.fuel-container {
+    display: flex;
+    align-items: center;
+}
+.fuel-container label {
+    margin-right: 20px;
+}
+input[type="text"] {
+    padding-right: 10px; /* Adjust the padding as needed */
+    max-width: 350px; /* Adjust the maximum width as needed */
+}
+input[type="text"]:hover {
+    border: 1px solid rgb(255, 191, 0); /* Gold border on hover */
+    cursor: pointer; /* Change cursor to gold color on hover */
+}
+select {
+    background-color: rgb(255, 191, 0); /* Gold background for the combo box */
+    color: #000; /* Black font color for the combo box */
+    border: 1px solid rgb(255, 191, 0); /* Gold border for the combo box */
+}
+
+
+.btn-container button:hover {
+    
+    background-color: #000; /* Black background on hover */
+    color: rgb(255, 191, 0); /* Gold font color on hover */
+    border-color: rgb(255, 191, 0); /* Gold border color on hover */
+}
+.btn-container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(255, 191, 0); /* Default gold background */
+    color: #000; /* Default black font color */
+    border: 2px solid rgb(255, 191, 0); /* Default gold border */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.file-input-container {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.file-input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px; /* Adjust font size as needed */
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0); /* For IE8 and earlier */
+}
+
+/* Style the button appearance */
+.file-button {
+    background-color: rgb(255, 191, 0); /* Gold background */
+    color: #000; /* Black font color */
+    padding: 10px 20px; /* Adjust padding as needed */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.file-button:hover {
+    background-color: #000; /* Black background on hover */
+    color: rgb(255, 191, 0); /* Gold font color on hover */
+}

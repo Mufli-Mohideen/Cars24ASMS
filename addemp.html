@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employee Registration</title>
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    /* Your existing CSS styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background: url(images/bg.jpg) no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+    opacity: 1;
+    width: 100%;
+    max-width: 375px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid gold;
+    border-radius: 10px;
+    animation: fadeIn 1s ease-in forwards, glow 2s infinite alternate;
+    box-shadow: 0 0 20px rgba(255, 191, 0, 0.8);
+    }
+
+        @keyframes glow {
+    0% {
+        border-color: gold;
+        box-shadow: 0 0 20px rgba(255, 191, 0, 0.8);
+    }
+    100% {
+        border-color: transparent;
+        box-shadow: none;
+    }
+    }
+
+
+    /* Add a new title style for the employee registration */
+    .title-employee-registration {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Apply label styles for your form */
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    /* Adjust input styles for responsiveness */
+    input[type="text"] {
+      width: 90%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid black;
+      border-radius: 5px;
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
+      transition: border-color 0.3s, background-color 0.3s;
+    }
+
+    input[type="text"]:hover {
+      border-color: gold;
+    }
+
+    input[type="password"] {
+      width: 90%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid black;
+      border-radius: 5px;
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
+      transition: border-color 0.3s, background-color 0.3s;
+    }
+
+    input[type="password"]:hover {
+      border-color: gold;
+    }
+
+
+
+    /* Center the buttons */
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    /* Add button styles */
+    button {
+      background-color: gold;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+      margin: 0 10px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: black;
+      color: gold;
+      border: 1px solid rgb(255, 191, 0);
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Use the title for employee registration -->
+    <h1 class="title-employee-registration">Employee Registration</h1>
+
+    <form id="employeeForm" method="post" action="employee.php">
+
+      <label for="employeeId" style="margin-top: 30px;">Employee ID:</label>
+      <input type="text" id="employeeId" name="employeeId" required>
+
+      <label for="employeeName">Employee Name:</label>
+      <input type="text" id="employeeName" name="employeeName" required>
+
+      <label for="employeeAddress">Address:</label>
+      <input type="text" id="employeeAddress" name="employeeAddress" required>
+
+      <label for="employeePhone">Phone Number:</label>
+      <input type="text" id="employeePhone" name="employeePhone" required>
+
+      <label for="employeePassword">Password:</label>
+      <input type="password" id="employeePassword" name="employeePassword" required>
+
+      <div class="button-container">
+        <button type="button" id="clearButton" onclick="clearForm()">Clear</button>
+        <button type="submit" id="registerButton">Register</button>
+      </div>
+
+      <div class="link-container" style="margin-top: 20px;">
+      <a href="viewemp.php" style="text-align: center; text-decoration: none; color: rgb(255, 191, 0); margin-left: 35%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 15px;">View Employees</a>
+      </div>
+
+    </form>
+
+  </div>
+
+  <script>
+    function clearForm() {
+      // Clear the form fields
+      document.getElementById("employeeId").value = "";
+      document.getElementById("employeeName").value = "";
+      document.getElementById("employeeAddress").value = "";
+      document.getElementById("employeePhone").value = "";
+      document.getElementById("employeePassword").value = "";
+    }
+  </script>
+
+    
+
+</body>
+</html>

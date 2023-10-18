@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Staff Login</title>
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    /* Your existing CSS styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url(images/bg.jpg);
+      background-size: cover;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 375px;
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 191, 0, 0.8);
+      text-align: center;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .title {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin: 8px 0;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 25px;
+    }
+
+    label {
+      color: white;
+      font-weight: bold;
+      width: 100px;
+      text-align: right;
+      margin-right: 10px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      transition: border 0.3s;
+    }
+
+    input[type="text"]:hover,
+    input[type="password"]:hover {
+      border: 1px solid rgb(255, 191, 0);
+    }
+
+    a.forgot-password-link {
+      color: rgb(255, 191, 0);
+      text-decoration: none;
+      font-size: 11px;
+      margin-top: 2px;
+    }
+
+    .login-button,
+    .clear-button {
+      width: 48%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s, border 0.3s;
+      font-weight: bold;
+    }
+
+    .login-button {
+      background: linear-gradient(to right, black 50%, rgb(255, 191, 0) 50%);
+      background-size: 200% 100%;
+      background-position: right;
+      border: 1px solid rgb(255, 191, 0);
+      color: black;
+    }
+
+    .login-button:hover {
+      background-position: left;
+      border: 1px solid rgb(255, 191, 0);
+      color: rgb(255, 191, 0);
+    }
+
+    .clear-button {
+      background: linear-gradient(to right, rgb(255, 191, 0) 50%, transparent 50%);
+      background-size: 200% 100%;
+      background-position: right;
+      border: 1px solid rgb(255, 191, 0);
+      color: rgb(255, 191, 0);
+    }
+
+    .clear-button:hover {
+      background-position: left;
+      border: 1px solid black;
+      color: black;
+    }
+
+    .admin-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: rgb(255, 191, 0);
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .admin-button:hover {
+      background-color: black;
+      color: rgb(255, 191, 0);
+      border: 1px solid rgb(255, 191, 0);
+    }
+
+    .admin-container {
+      position: absolute;
+      top: 20px;
+      right: 60px;
+      display: flex;
+      align-items: center;
+    }
+
+    .admin-password-input {
+      width: 150px;
+      margin-right: 175px;
+      margin-top: 20px;
+    }
+
+    @media screen and (max-width: 375px) {
+      .container {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+  <form action="javascript:void(0);" method="post">
+    <div class="admin-container">
+      <input type="password" id="adminPassword" class="admin-password-input">
+      <button class="admin-button" onclick="checkAdminPassword()">Admin Login <i class="fas fa-user-cog"></i></button>
+    </div>
+  </form>
+
+  <form action="staffportal.php" method="post">
+    <div class="container">
+      <h1 class="title">Staff Entrance Portal</h1>
+
+      <div class="form-group">
+        <label for="staff-id">Staff ID:</label>
+        <input type="text" id="staff-id" name="staff-id">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+      </div>
+
+      <a href="pswdmodify.html" class="forgot-password-link"><u>Change Password</u></a>
+
+      <div class="button-group">
+        <button type="submit" class="login-button">Login</button>
+        <button type="button" class="clear-button" onclick="clearForm()">Clear</button>
+      </div>
+    </div>
+  </form>
+  
+
+  <script>
+    function checkAdminPassword() {
+  var adminPassword = document.getElementById("adminPassword").value;
+  if (adminPassword === "1234") {
+    alert("Admin login successful");
+    window.location.href = "addemp.html";
+  } else {
+    alert("Incorrect admin password. Access denied.");
+  }
+}
+    function clearForm() {
+      // Clear the form fields
+      document.getElementById("staff-id").value = "";
+      document.getElementById("password").value = "";
+    }
+
+
+  </script>
+</body

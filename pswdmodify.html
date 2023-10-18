@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Change Staff Password</title>
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    /* Your existing CSS styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background: url(images/bg.jpg) no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      opacity: 1;
+      width: 100%;
+      max-width: 375px;
+      padding: 20px;
+      box-sizing: border-box;
+      background-color: rgba(0, 0, 0, 0.7);
+      border: 2px solid gold;
+      border-radius: 10px;
+      animation: fadeIn 1s ease-in forwards, glow 2s infinite alternate;
+    }
+
+    .title-change-password {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 90%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid black;
+      border-radius: 5px;
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
+      transition: border-color 0.3s, background-color 0.3s;
+    }
+
+    input[type="text"]:hover,
+    input[type="password"]:hover {
+      border-color: gold;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: gold;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+      margin: 0 10px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: black;
+      color: gold;
+      border: 1px solid rgb(255, 191, 0);
+    }
+
+    .container {
+      opacity: 1;
+      width: 100%;
+      max-width: 375px;
+      padding: 20px;
+      box-sizing: border-box;
+      background-color: rgba(0, 0, 0, 0.7);
+      border: 2px solid gold;
+      border-radius: 10px;
+      animation: fadeIn 1s ease-in forwards, glow 2s infinite alternate;
+      box-shadow: 0 0 20px rgba(255, 191, 0, 0.8);
+    }
+
+    @keyframes glow {
+      0% {
+        border-color: gold;
+        box-shadow: 0 0 20px rgba(255, 191, 0, 0.8);
+      }
+      100% {
+        border-color: transparent;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title-change-password">Password Modification</h1>
+    <form id="passwordChangeForm" method="post" action="changepassword.php">
+      <label for="staffId" style="margin-top: 25px;">Staff ID:</label>
+      <input type="text" id="staffId" name="staffId" required>
+
+      <label for="currentPassword">Current Password:</label>
+      <input type="password" id="currentPassword" name="currentPassword" required>
+
+      <label for="newPassword">New Password:</label>
+      <input type="password" id="newPassword" name="newPassword" required>
+
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+      <div class="button-container">
+        <button type="button" id="clearButton" onclick="clearForm()">Clear</button>
+        <button type="submit" id="changePasswordButton">Change Password</button>
+      </div>
+    </form>
+  </div>
+  <script>
+    function clearForm() {
+      // Clear the form fields
+      document.getElementById("staffId").value = "";
+      document.getElementById("currentPassword").value = "";
+      document.getElementById("newPassword").value = "";
+      document.getElementById("confirmPassword").value = "";
+    }
+  </script>
+
+
+</body>
+</html>

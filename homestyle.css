@@ -1,0 +1,181 @@
+/* Global styles */
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/* Gold color */
+.gold {
+    color: rgb(255, 191, 0);
+}
+
+/* Split layout container */
+.split-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/* Split boxes */
+.split {
+flex: 1;
+padding: 20px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 100%;
+max-width: 100%; /* Adjust the max-width as needed */
+opacity: 0;
+animation: fadeInUp 1s ease forwards;
+border-radius: 10px;
+transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Add border-color transition */
+border: 2px solid transparent; /* Add a transparent border initially */
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Change box color on hover */
+    .split:hover {
+        background-color: #111;
+        color: #fff;
+        border-color: rgb(255, 191, 0); /* Change border color to gold on hover */
+    }
+/* Button styles */
+.btn-gold {
+    background-color: rgb(255, 191, 0);
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s, font-weight 0.3s; /* Add font-weight transition */
+}
+.btn-gold:hover {
+    background-color: #FFD700;
+    font-weight: bold;
+}
+/* Icon styles */
+.icon {
+    font-size: 30px;
+    margin-top: 10px;
+}
+/* Additional styling for headings */
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+/* Additional styling for descriptions */
+.description {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+/* Animation keyframes */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Media query for screens smaller than 375px */
+@media (max-width: 375px) {
+    .split-container {
+        padding: 10px;
+    }
+    .split {
+        width: 100%;
+        margin: 10px 0;
+    }
+    .header h1 {
+        font-size: 24px;
+    }
+}
+/* Media query for larger screens */
+@media (min-width: 769px) {
+    .split-container {
+        flex-direction: row;
+    }
+    .split {
+        width: calc(33.33% - 40px);
+        margin: 20px;
+    }
+}
+/* Additional styling for engaging content */
+.engaging-content {
+    text-align: center;
+    padding: 40px;
+}
+/* Styling for additional content */
+.additional-content {
+background-color: #333;
+color: #fff;
+padding: 20px;
+border-radius: 10px;
+margin-top: auto; /* Push the container to the bottom */
+height: 100%; /* Set the height to 100% to reach the bottom */
+}
+
+@keyframes revealCharacters {
+0% {
+width: 0;
+}
+100% {
+width: 100%;
+}
+}
+
+/* Header styles */
+.header {
+text-align: center;
+padding: 20px 0;
+background-color: #000;
+}
+
+/* Custom font for the title */
+.title {
+font-family: 'Roboto Condensed', sans-serif;
+font-weight: 700;
+font-size: 36px;
+position: relative;
+overflow: hidden;
+color: transparent; /* Hide text initially */
+}
+
+/* Animation for individual characters */
+.title::before {
+content: attr(data-text);
+display: inline-block;
+width: 0;
+position: absolute;
+left: 0;
+top: 0;
+animation: revealCharacters 2s linear forwards;
+color: #FFD700; /* Gold color */
+}
+
+.all-rights {
+text-align: center;
+margin-top: 10px; /* Minimum 10px gap from the top */
+}
+
+
+
+
+.glowing-text {
+color: rgb(255, 191, 0);
+text-shadow: 0 0 5px rgba(255, 191, 0, 0.7); /* Add a subtle glow effect */
+animation: glow 2s infinite alternate; /* Apply animation */
+}
+
+/* Keyframes for the glow animation */
+@keyframes glow {
+0% {
+    text-shadow: 0 0 5px rgba(255, 191, 0, 0.7);
+}
+100% {
+    text-shadow: 0 0 10px rgba(255, 191, 0, 1);
+}
+}
